@@ -4,42 +4,42 @@ This project is inspired by the paper **[Emojinize](https://arxiv.org/abs/2403.0
 
 The pipeline:
 - Loads input sentences from `data/input_examples.txt`
-- Queries an LLM (via OpenRouter) using few-shot examples
+- Queries an LLM (via `OpenRouter`) using few-shot examples
 - Produces JSON emoji translations
-- Saves a HuggingFace dataset on disk
-- Creates a clean CSV preview with only:  
-  **input_text, emoji**
+- Saves a `Hugging Face` dataset on disk
+- Creates a clean CSV preview with only `input_text` and `emoji` fields
 
 ---
 
 ## Setup
 
-1. **Install dependencies**
+1. **Install Dependencies**  
    ```bash
    pip install -r requirements.txt
 
-2. **Add your API key**
-   Similar to .env.example, create a file in the root directory called "env" with the line:
-   OPENROUTER_API_KEY=your-key-here
+2. **Add your API key**  
+   Similar to `.env.example`, create a file in the root directory called `.env` with the line:  
+   `OPENROUTER_API_KEY=your-key-here`
 
-2. **Model used**
-   google/gemma-3-27b-it:free (can be changed by changing the "MODEL_NAME" parameter under config.py)
+2. **Model Used**  
+   `google/gemma-3-27b-it:free` (can be changed by modifying the `MODEL_NAME` parameter under `config.py`)
 
 
 ## Usage
 
-1. **Add your inputs**
-One sentence per line, add with the targeted word surrounded by "< >" to the file:
-data/input_examples.txt
+1. **Add Your Inputs**  
+Add one example per line with the targeted word surrounded by `< >` to the file `data/input_examples.txt`.
 
-2. **Run the dataset builder**
+2. **Run the Dataset Builder**  
    ```bash
    python build_dataset.py
 
-4. **Outputs**
-HuggingFace dataset (compatible with Hugging Face SFTTrainer from trl) → data/emoji_sft_dataset/
-CSV preview → data/emoji_sft_dataset_preview.csv
-Printed preview in terminal
+4. **Outputs**  
+- **HuggingFace Dataset (compatible with TRL’s SFTTrainer):**  
+  `data/emoji_sft_dataset/`
+- **CSV Preview:**  
+  `data/emoji_sft_dataset_preview.csv`
+- **A preview of the dataset** is also printed in the terminal
 
 
 
