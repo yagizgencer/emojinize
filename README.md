@@ -33,25 +33,13 @@ One sentence per line, add with the targeted word surrounded by "< >" to the fil
 data/input_examples.txt
 
 2. **Run the dataset builder**
-python build_dataset.py
+   ```bash
+   python build_dataset.py
 
-3. **Outputs**
+4. **Outputs**
 HuggingFace dataset (compatible with Hugging Face SFTTrainer from trl) → data/emoji_sft_dataset/
 CSV preview → data/emoji_sft_dataset_preview.csv
 Printed preview in terminal
-
-
-## Project Structure
-
-build_dataset.py        # Main script to generate dataset
-config.py               # System prompt, few-shot examples, paths, model config
-utils.py                # LLM queries + dataset helpers
-data/
-  input_examples.txt
-  emoji_sft_dataset/
-  emoji_sft_dataset_preview.csv
-.env.example
-requirements.txt
 
 
 
