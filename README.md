@@ -23,6 +23,8 @@ The pipeline:
 
 2. **Model Used**  
    `google/gemma-3-27b-it:free` (can be changed by modifying the `MODEL_NAME` parameter under `config.py`)
+   
+   You can browse available OpenRouter models [here](https://openrouter.ai/models).
 
 
 ## Usage
